@@ -14,7 +14,7 @@
     <body>
  <header>
      <nav id="navbar">
-         <h1>CODISHOP</h1>
+         <h3>CODISHOP</h3>
          <?php wp_nav_menu(); ?>
          <section class="emo">
              <a href="#"><i class="fas fa-user"></i></a>

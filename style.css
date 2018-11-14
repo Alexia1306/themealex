@@ -1,11 +1,12 @@
 /*
 Theme Name: themealex
 */
+
 img {
-    max-width: 50%;
+    max-width: 80%;
     height: 40%;
     float: left;
-    margin-left:25%;
+    margin-left:30%;
     padding: 2rem;
 }
 
@@ -16,6 +17,7 @@ img {
 ul li {
     list-style-type: none;
     display: inline;
+
 }
 
 ul li a:hover {
@@ -25,7 +27,7 @@ ul li a:hover {
 
 ul li a {
     color: black;
-    margin: 2rem;
+    margin: 0.5rem;
 }
 
 header {
@@ -42,4 +44,41 @@ header {
 
 #carouselExampleIndicators {
     background: #eeeeee;
+    margin-bottom: 3rem;
+}
+
+.second_list, ul, li, a {
+    color: black;
+    display: inline;
+    margin: 1.5rem;
+
+}
+
+.row .card{
+    border: none;
+}
+
+.card {
+    padding: 8rem;
+}
+
+.card img {
+    width: 100%;
+    margin: auto;
+    padding: 0;
+}
+
+.btn-one {
+    margin-left: 50%;
+    margin-top: 2rem,
+}
+
+
+.footerul {
+    display: flex;
+    flex-direction: column;
+    color: black;
+    display: inline-block;
+    margin: 1.5rem;
+
 }

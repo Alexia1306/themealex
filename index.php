@@ -1,8 +1,9 @@
 <?php
+get_header();
+?>
 
 
-get_header(); ?>
-
+<main>
 
 <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
   <ol class="carousel-indicators">
@@ -11,30 +12,38 @@ get_header(); ?>
     <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
   </ol>
   <div class="carousel-inner">
-    <div class="carousel-item active">
-      <img src="https://i.pinimg.com/originals/32/a8/c0/32a8c08a3bf620ae394c26f587721d40.jpg" alt="First slide">
-      <div class="carousel-text">
-         <h3>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</h3>
-         <p>lorem ipsum dole dor soi fjeo</p>
-         <button type="button" name="button">LEARN MORE</button>
-     </div>
-    </div>
-    <div class="carousel-item">
-      <img src="https://img.1qr.eu/hh/images/m/artc/30726smk/fr/fr/image.jpg" alt="Second slide">
-      <div class="carousel-text">
-         <h3>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</h3>
-         <p>lorem ipsum dole dor soi fjeo</p>
-         <button type="button" name="button">LEARN MORE</button>
-     </div>
-    </div>
-    <div class="carousel-item">
-      <img src="https://i.pinimg.com/236x/f0/a9/74/f0a974f5897252610a380fe6133c5667.jpg" alt="Third slide">
-      <div class="carousel-text">
-         <h3>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</h3>
-         <p>lorem ipsum dole dor soi fjeo</p>
-         <button type="button" name="button">LEARN MORE</button>
-     </div>
-    </div>
+      <?php
+
+      $loop =  new WP_Query(array(
+          "post_type" =>"product",
+          "product_cat" => "carousel"
+      ));
+      $first = true;
+      while($loop->have_posts()){
+          $loop->the_post();
+          ?>
+          <div class="carousel-item <?php
+          if ($first == true){
+              echo "active";
+              $first = false;
+          }
+           ?>">
+
+            <div class="carousel-text">
+                <?php echo woocommerce_get_product_thumbnail(); ?>
+               <h3> <?php the_title(); ?></h3>
+               <p>lorem ipsum dole dor soi fjeo</p>
+               <button type="button" name="button">LEARN MORE</button>
+           </div>
+          </div>
+          <?php
+
+
+      }
+       ?>
+
+
+
   </div>
   <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
     <span class="carousel-control-prev-icon" aria-hidden="true"></span>
@@ -48,47 +57,51 @@ get_header(); ?>
 
 
 
+<section class="second_list">
+    <ul>
+    <a href="#"><li>Albums</li></a>
+    <a href="#"><li>Clothing</li></a>
+    <a href="#"><li>Hoodies</li></a>
+    <a href="#"><li>Music</li></a>
+    <a href="#"><li>Posters</li></a>
+    <a href="#"><li>Singles</li></a>
+    <a href="#"><li>T-shirts</li></a>
+</ul>
+</section>
+
+<section class="row no-gutters">
+    <?php
+    $products = wc_get_products(array("category" => "article" ));
+    foreach ($products as $product):
+
+        ?>
+        <div class="myCard col-1 col-md-4">
+
+            <div class="card">
+                <?php echo woocommerce_get_product_thumbnail(); ?>
+
+                <div class="card-body">
+                    <h5 class="card-title"><?php the_title(); ?></h5>
+                    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                    <a href="#" class="btn btn-primary">Go somewhere</a>
+                </div>
+            </div>
+        </div>
+
+<?php endforeach; ?>
+</section>
+
+
+
+<button class="btn-one" type="button" name="button">Show all</button>
+</main>
+
+
+
 
 <?php
 
 
 
-     if ( have_posts() ) : ?>
-
-
-
-        <?php
-        // Start the loop.
-        while ( have_posts() ) : the_post();
-
-        the_title(); the_content();
-
-        // End the loop.
-        endwhile;
-
-
-
-    endif;
-
-
-
-
-
-
-
-
 get_sidebar();
-
-
-
-
-
-
-
 get_footer();
-
-
-
-
-
-?>
