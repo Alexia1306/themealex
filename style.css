@@ -68,15 +68,20 @@ header {
 }
 
 
-.help a h5{
-    color:black;
-    margin-left: 10rem;
-    width: auto;
+.btn, a:hover {
+    color:white;
 
 }
 
-.btn, a:hover {
-    color:white;
+.help a {
+    color: black;
+    display: flex;
+    flex-direction: column;
+    margin-left: 10rem;
+}
+
+.help h5 {
+    margin-left: 10rem;
 
 }
 
@@ -89,14 +94,17 @@ header {
     border: none;
     border:solid black 2px;
     width: 50%;
+    margin: 0.5rem;
 }
 
 .formfooter h5 {
     text-align: left;
+    margin: 0.5rem;
 
 }
 .formfooter button {
     width: 50%;
-    margin: 1rem;
+    margin: 0.5rem;
+    background: black;
 
 }

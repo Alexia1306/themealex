@@ -54,11 +54,11 @@ get_header();
 
 
 <div class="row">
-    <div class="col-12 col-md-8 bg-danger text-center">
+    <div class="col-12 col-md-8 text-center">
         <?php wp_nav_menu(array('menu' => 'Category')); ?>
     </div>
 
-    <div class="col-12 col-md-4 bg-success text-center">
+    <div class="col-12 col-md-4 text-center">
         <?php wp_nav_menu(array('menu' => 'Shop')); ?>
     </div>
 </div>
@@ -73,7 +73,7 @@ get_header();
                 <?php echo woocommerce_get_product_thumbnail(); ?>
 
                 <div class="card-body">
-                    <h5 class="card-title"><?php the_title(); ?></h5>
+                    <h5 class="card-title"><?php echo $product->get_title(); ?></h5>
                     <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
                     <a href="<?php echo the_permalink(); ?>" class="btn">Go somewhere</a>
                 </div>
