@@ -3,8 +3,7 @@ Theme Name: themealex
 */
 
 img {
-    max-width: 80%;
-    height: 40%;
+
     float: left;
     margin-left:30%;
     padding: 2rem;
@@ -68,17 +67,36 @@ header {
     padding: 0;
 }
 
-.btn-one {
-    margin-left: 50%;
-    margin-top: 2rem,
+
+.help a h5{
+    color:black;
+    margin-left: 10rem;
+    width: auto;
+
 }
 
+.btn, a:hover {
+    color:white;
 
-.footerul {
+}
+
+.formfooter {
     display: flex;
     flex-direction: column;
-    color: black;
-    display: inline-block;
-    margin: 1.5rem;
+}
+
+.formfooter input {
+    border: none;
+    border:solid black 2px;
+    width: 50%;
+}
+
+.formfooter h5 {
+    text-align: left;
+
+}
+.formfooter button {
+    width: 50%;
+    margin: 1rem;
 
 }

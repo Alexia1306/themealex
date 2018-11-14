@@ -1,19 +1,24 @@
-<?php wp_footer(); ?>
+        <div class="row">
+            <div class="col-12 col-md-4 bg-danger">
+                <h5>Help</h5>
+                <h6><?php wp_nav_menu(array('menu' => 'Help')); ?></h6>
+            </div>
 
-<section>
+             <div class="col-12 col-md-4 bg-danger">
+                <?php $page = get_page_by_title('About'); ?>
+                <h3><?php echo $page->post_title; ?></h3>
+                <p><?php echo $page->post_excerpt; ?></p>
+            </div>
 
-<ul class="footerul" style="display: flex;">
-    <a href="#"><li>HELP</li></a>
-    <a href="#"><li>About</li></a>
-    <a href="#"><li>Privacy Policy</li></a>
-    <a href="#"><li>Return Policy</li></a>
-    <a href="#"><li>contact</li></a>
+            <div class="col-12 col-md-4 bg-danger">
 
-</ul>
-</section>
-
-
-
-
-</body>
+                <form class="formfooter">
+                    <h5>Newsletter</h5>
+                    <input type="email">
+                    <button>Sign up</button>
+                </form>
+            </div>
+        </div>
+        <?php wp_footer(); ?>
+    </body>
 </html>

@@ -20,4 +20,17 @@ function az_style() {
 }
 
 add_action( 'wp_enqueue_scripts', 'az_style' );
+
+
+
+// permet d'ajouter un extrait a une page
+add_post_type_support( 'page', 'excerpt' );
+
+
+
+// NAV MENU dans wordpress
+function register_my_menu() {
+	register_nav_menu('new-menu',__( 'New Menu' ));
+  }
+  add_action( 'init', 'register_my_menu' );
  ?>

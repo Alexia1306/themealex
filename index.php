@@ -29,21 +29,18 @@ get_header();
           }
            ?>">
 
-            <div class="carousel-text">
-                <?php echo woocommerce_get_product_thumbnail(); ?>
-               <h3> <?php the_title(); ?></h3>
-               <p>lorem ipsum dole dor soi fjeo</p>
-               <button type="button" name="button">LEARN MORE</button>
-           </div>
+                <div class="carousel-text">
+                    <?php echo woocommerce_get_product_thumbnail(); ?>
+                    <h3> <?php the_title(); ?></h3>
+                    <p>lorem ipsum dole dor soi fjeo</p>
+                    <a href="<?php echo the_permalink();?>" class="btn">Go somewhere</a>
+                </div>
           </div>
           <?php
 
 
       }
        ?>
-
-
-
   </div>
   <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
     <span class="carousel-control-prev-icon" aria-hidden="true"></span>
@@ -56,49 +53,35 @@ get_header();
 </div>
 
 
+<div class="row">
+    <div class="col-12 col-md-8 bg-danger text-center">
+        <?php wp_nav_menu(array('menu' => 'Category')); ?>
+    </div>
 
-<section class="second_list">
-    <ul>
-    <a href="#"><li>Albums</li></a>
-    <a href="#"><li>Clothing</li></a>
-    <a href="#"><li>Hoodies</li></a>
-    <a href="#"><li>Music</li></a>
-    <a href="#"><li>Posters</li></a>
-    <a href="#"><li>Singles</li></a>
-    <a href="#"><li>T-shirts</li></a>
-</ul>
-</section>
+    <div class="col-12 col-md-4 bg-success text-center">
+        <?php wp_nav_menu(array('menu' => 'Shop')); ?>
+    </div>
+</div>
 
 <section class="row no-gutters">
     <?php
     $products = wc_get_products(array("category" => "article" ));
     foreach ($products as $product):
-
         ?>
         <div class="myCard col-1 col-md-4">
-
             <div class="card">
                 <?php echo woocommerce_get_product_thumbnail(); ?>
 
                 <div class="card-body">
                     <h5 class="card-title"><?php the_title(); ?></h5>
                     <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                    <a href="#" class="btn btn-primary">Go somewhere</a>
+                    <a href="<?php echo the_permalink(); ?>" class="btn">Go somewhere</a>
                 </div>
             </div>
         </div>
-
 <?php endforeach; ?>
 </section>
-
-
-
-<button class="btn-one" type="button" name="button">Show all</button>
 </main>
-
-
-
-
 <?php
 
 
